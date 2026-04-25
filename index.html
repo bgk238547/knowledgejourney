@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Knowledge Journey Agency</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --gold: #C9A84C;
@@ -77,7 +77,7 @@
         }
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 4rem;
+            font-size: 3.8rem;
             line-height: 1.15;
             margin-bottom: 24px;
             background: linear-gradient(135deg, var(--white), var(--gold));
@@ -89,7 +89,7 @@
             color: rgba(255,255,255,0.6);
             line-height: 1.8;
             font-weight: 300;
-            max-width: 650px;
+            max-width: 680px;
             margin: 0 auto 40px;
         }
         .cta-btn {
@@ -300,6 +300,27 @@
         .contact-item h4 { color: var(--gold); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
         .contact-item p { color: rgba(255,255,255,0.6); font-size: 0.95rem; }
 
+        /* ===== MEMBER IMAGE ===== */
+        .member-photo {
+            max-width: 550px;
+            width: 90%;
+            border-radius: 16px;
+            border: 2px solid rgba(201,168,76,0.3);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .member-photo:hover {
+            transform: scale(1.02);
+            box-shadow: 0 30px 80px rgba(201,168,76,0.15);
+        }
+        .member-caption {
+            color: rgba(255,255,255,0.4);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            margin-top: 16px;
+            font-style: italic;
+        }
+
         /* ===== FOOTER ===== */
         footer {
             background: rgba(0,0,0,0.3);
@@ -343,10 +364,10 @@
 <!-- HERO -->
 <section class="hero">
     <div class="hero-content">
-        <div class="hero-badge">Exclusive Advisory for Global Leaders</div>
-        <h1>Your Gateway to<br>Korea's Business Frontier</h1>
-        <p>We are a boutique research & advisory agency serving high-level international executives with deep-domain intelligence on the Korean market — powered by three senior experts in Business Strategy, Data Analytics, and Semiconductor & Electronics.</p>
-        <a href="#contact" class="cta-btn">Schedule a Consultation</a>
+        <div class="hero-badge">Exclusive Experiences for Distinguished Guests</div>
+        <h1>Discover Korea's Soul<br>Through Exclusive Journeys</h1>
+        <p>Exclusive traveling experience and taste of the profound culture of Korea — historical site visits and modern life of high society. Professional guided tours available for VIPs.</p>
+        <a href="#contact" class="cta-btn">Reserve Your Journey</a>
     </div>
 </section>
 
@@ -355,37 +376,37 @@
     <div class="about-grid">
         <div>
             <div class="section-label">About KJA</div>
-            <div class="section-title">Precision Intelligence<br>for the Korean Market</div>
+            <div class="section-title">Where Heritage<br>Meets Elegance</div>
             <p class="section-desc">
-                Knowledge Journey Agency is an exclusive advisory firm designed for overseas C-suite executives, institutional investors, and VIP decision-makers who require actionable insights into Korea's fast-evolving business landscape. We combine on-the-ground expertise with rigorous analysis to provide bespoke research and strategic recommendations.
+                Knowledge Journey Agency offers an exclusive gateway into Korea's rich cultural tapestry and vibrant modern lifestyle. We curate bespoke journeys for international VIP guests — from the ancient palaces of Joseon dynasty to the sophisticated dining and art scenes of Gangnam. Every itinerary is personally crafted and guided by our team of three dedicated experts.
             </p>
             <div class="stat-row">
                 <div class="stat">
                     <h3>3</h3>
-                    <p>Domain Experts</p>
+                    <p>Expert Guides</p>
                 </div>
                 <div class="stat">
                     <h3>VIP</h3>
-                    <p>Exclusive Clientele</p>
+                    <p>Exclusive Access</p>
                 </div>
                 <div class="stat">
-                    <h3>360°</h3>
-                    <p>Full-Spectrum Analysis</p>
+                    <h3>5★</h3>
+                    <p>Premium Service</p>
                 </div>
             </div>
         </div>
         <div class="about-visual">
             <div class="about-card">
-                <h4>🇰🇷 Korea-Focused</h4>
-                <p>In-depth local intelligence across industries — from regulatory shifts to emerging market opportunities unique to the Korean ecosystem.</p>
+                <h4>🏯 Historical & Cultural Immersion</h4>
+                <p>Private guided visits to UNESCO heritage sites, royal palaces, ancient temples, and traditional villages — with deep cultural storytelling you won't find in guidebooks.</p>
             </div>
             <div class="about-card">
-                <h4>🌐 Global Perspective</h4>
-                <p>Insights tailored for international stakeholders, bridging cultural and strategic gaps between global HQs and Korean operations.</p>
+                <h4>🥂 Modern High Society Experience</h4>
+                <p>Exclusive access to Seoul's elite dining, private art galleries, luxury shopping, K-culture behind-the-scenes, and the finest experiences Korean high society has to offer.</p>
             </div>
             <div class="about-card">
-                <h4>🔒 Confidential & Bespoke</h4>
-                <p>Every engagement is private, customized, and delivered with executive-grade discretion.</p>
+                <h4>🔒 Private & Personalized</h4>
+                <p>Every journey is tailored to your interests, schedule, and preferences. No group tours — only private, one-on-one or small-group VIP experiences with full discretion.</p>
             </div>
         </div>
     </div>
@@ -393,50 +414,50 @@
 
 <!-- EXPERTS -->
 <section class="experts" id="experts">
-    <div class="section-label">Our Team</div>
-    <div class="section-title">Three Pillars of Expertise</div>
-    <p class="section-desc" style="margin: 0 auto;">Each member brings 15+ years of specialized domain knowledge, ensuring comprehensive and authoritative intelligence.</p>
+    <div class="section-label">Your Guides</div>
+    <div class="section-title">Three Experts, One Extraordinary Journey</div>
+    <p class="section-desc" style="margin: 0 auto;">Each member brings deep domain knowledge and personal passion to create unforgettable Korean experiences.</p>
 
     <div class="experts-grid">
-        <!-- Expert 1: Domain Business -->
+        <!-- Expert 1: Domain Business & Cultural Heritage -->
         <div class="expert-card">
-            <div class="expert-icon">📊</div>
-            <h3>Domain Business</h3>
-            <span class="expert-role">Business Strategy & Market Entry</span>
-            <p>Specialist in Korean corporate ecosystems, conglomerate (Chaebol) dynamics, regulatory frameworks, and cross-border business development. Advises on market entry, partnerships, and competitive positioning.</p>
+            <div class="expert-icon">🏛️</div>
+            <h3>Cultural & Business</h3>
+            <span class="expert-role">Heritage & Corporate Korea</span>
+            <p>Deep expertise in Korean history, Confucian traditions, royal heritage sites, and the modern corporate landscape. Bridges the gap between ancient wisdom and Korea's dynamic business culture for visiting executives.</p>
             <div class="expert-tags">
-                <span>Market Entry</span>
-                <span>Chaebol Strategy</span>
-                <span>Regulatory</span>
-                <span>M&A Advisory</span>
+                <span>Palace Tours</span>
+                <span>Korean History</span>
+                <span>Business Culture</span>
+                <span>VIP Networking</span>
             </div>
         </div>
 
-        <!-- Expert 2: Data Analytics -->
+        <!-- Expert 2: Data & Lifestyle Analytics -->
         <div class="expert-card">
-            <div class="expert-icon">🧠</div>
-            <h3>Data Analytics</h3>
-            <span class="expert-role">Quantitative Intelligence & AI</span>
-            <p>Expert in advanced data modeling, market forecasting, consumer behavior analytics, and AI-driven insights. Transforms complex Korean market data into clear, decision-ready intelligence for global executives.</p>
+            <div class="expert-icon">🍷</div>
+            <h3>Lifestyle & Trends</h3>
+            <span class="expert-role">Modern Korea & High Society</span>
+            <p>Expert curator of Seoul's finest experiences — from Michelin-starred Korean cuisine to private art collections, luxury wellness retreats, and the cutting-edge K-culture scene that defines modern Korean sophistication.</p>
             <div class="expert-tags">
-                <span>Predictive Analytics</span>
-                <span>AI / ML</span>
-                <span>Market Forecasting</span>
-                <span>Data Visualization</span>
+                <span>Fine Dining</span>
+                <span>Art & Design</span>
+                <span>K-Culture</span>
+                <span>Luxury Wellness</span>
             </div>
         </div>
 
-        <!-- Expert 3: Semiconductor & Electronics -->
+        <!-- Expert 3: Technology & Innovation -->
         <div class="expert-card">
             <div class="expert-icon">⚡</div>
-            <h3>Semiconductor & Electronics</h3>
-            <span class="expert-role">Deep-Tech Industry Specialist</span>
-            <p>Authoritative knowledge of Korea's semiconductor ecosystem (Samsung, SK Hynix), consumer electronics supply chains, display technology, and the evolving global chip landscape from a Korean perspective.</p>
+            <h3>Tech & Innovation</h3>
+            <span class="expert-role">Future Korea Experience</span>
+            <p>Specialist in Korea's world-leading technology ecosystem. Offers exclusive visits to semiconductor fabs, electronics showrooms, smart city infrastructure, and innovation hubs — perfect for tech-savvy VIP guests.</p>
             <div class="expert-tags">
-                <span>Semiconductors</span>
-                <span>Consumer Electronics</span>
-                <span>Supply Chain</span>
-                <span>Display Tech</span>
+                <span>Tech Tours</span>
+                <span>Smart City</span>
+                <span>Innovation Hubs</span>
+                <span>Electronics</span>
             </div>
         </div>
     </div>
@@ -446,29 +467,29 @@
 <section class="services" id="services">
     <div class="services-header">
         <div class="section-label">What We Offer</div>
-        <div class="section-title">Specialized Services</div>
-        <p class="section-desc">Tailored exclusively for international VIP clients seeking strategic advantage in Korea.</p>
+        <div class="section-title">Curated VIP Experiences</div>
+        <p class="section-desc">Tailored exclusively for international distinguished guests seeking the authentic and extraordinary Korea.</p>
     </div>
     <div class="services-grid">
         <div class="service-item">
             <div class="service-num">01</div>
-            <h4>Korea Business Research</h4>
-            <p>Comprehensive market research reports covering industry landscapes, competitive intelligence, consumer trends, and regulatory analysis — customized to your specific sector of interest.</p>
+            <h4>Royal Heritage Private Tours</h4>
+            <p>Exclusive after-hours access to Gyeongbokgung, Changdeokgung Secret Garden, Jongmyo Shrine, and other UNESCO sites — with expert historical narration and traditional tea ceremonies.</p>
         </div>
         <div class="service-item">
             <div class="service-num">02</div>
-            <h4>New Business Opportunity Scouting</h4>
-            <p>Identification and evaluation of emerging business opportunities, startup ecosystems, partnership targets, and untapped market segments within Korea's dynamic economy.</p>
+            <h4>High Society Seoul Experience</h4>
+            <p>Private dining at Korea's most prestigious restaurants, VIP access to art exhibitions, luxury Hanbok fittings, exclusive Gangnam lifestyle experiences, and nightlife curated for distinguished guests.</p>
         </div>
         <div class="service-item">
             <div class="service-num">03</div>
-            <h4>Executive Briefings & Advisory</h4>
-            <p>On-demand briefings for C-suite and board-level stakeholders — delivered as concise intelligence memos, virtual sessions, or in-person presentations in Seoul or your location.</p>
+            <h4>Business & Tech Immersion</h4>
+            <p>Behind-the-scenes tours of Korea's tech giants, startup ecosystems, and innovation districts. Ideal for executives combining business exploration with cultural appreciation.</p>
         </div>
         <div class="service-item">
             <div class="service-num">04</div>
-            <h4>Due Diligence & Deep Dives</h4>
-            <p>Thorough investigative research on specific Korean companies, technologies, or market segments — supporting investment decisions, M&A activity, or strategic partnerships.</p>
+            <h4>Bespoke Multi-Day Journeys</h4>
+            <p>Fully customized itineraries spanning Seoul, Jeju, Busan, and beyond — combining cultural depth, luxury accommodation, private transportation, and personal concierge service throughout.</p>
         </div>
     </div>
 </section>
@@ -476,30 +497,30 @@
 <!-- PROCESS -->
 <section class="process" id="process">
     <div class="process-header">
-        <div class="section-label">How We Work</div>
-        <div class="section-title">Engagement Process</div>
-        <p class="section-desc">A streamlined, confidential process designed for busy global executives.</p>
+        <div class="section-label">How It Works</div>
+        <div class="section-title">Your Journey Begins Here</div>
+        <p class="section-desc">A seamless, white-glove process from first inquiry to unforgettable experience.</p>
     </div>
     <div class="process-steps">
         <div class="process-step">
             <div class="step-circle">1</div>
-            <h4>Confidential Briefing</h4>
-            <p>Initial consultation to understand your objectives, scope, and timeline.</p>
+            <h4>Private Consultation</h4>
+            <p>Share your interests, dates, and preferences. We listen and understand your vision.</p>
         </div>
         <div class="process-step">
             <div class="step-circle">2</div>
-            <h4>Research & Analysis</h4>
-            <p>Our 3-expert team conducts deep-domain research tailored to your needs.</p>
+            <h4>Custom Itinerary</h4>
+            <p>Our 3-expert team designs a bespoke journey tailored exclusively for you.</p>
         </div>
         <div class="process-step">
             <div class="step-circle">3</div>
-            <h4>Intelligence Delivery</h4>
-            <p>Executive-ready reports, data dashboards, or live briefing sessions.</p>
+            <h4>VIP Experience</h4>
+            <p>Enjoy your journey with personal guides, private access, and luxury service.</p>
         </div>
         <div class="process-step">
             <div class="step-circle">4</div>
-            <h4>Ongoing Advisory</h4>
-            <p>Continued support with market monitoring and strategic updates.</p>
+            <h4>Lasting Memories</h4>
+            <p>Depart with deep connections to Korea and an open invitation to return.</p>
         </div>
     </div>
 </section>
@@ -509,7 +530,14 @@
     <div class="section-label">Get In Touch</div>
     <div class="section-title">Begin Your Journey</div>
     <p class="section-desc">All inquiries are handled with strict confidentiality. We respond within 24 hours.</p>
-    <a href="mailto:contact@knowledgejourney.agency" class="cta-btn">Contact Us</a>
+
+    <!-- 멤버 사진 -->
+    <div style="margin: 50px auto 40px; text-align: center;">
+        <img src="member.png" alt="KJA Expert Team" class="member-photo">
+        <p class="member-caption">Our Expert Team — Ready to Guide Your Korean Journey</p>
+    </div>
+
+    <a href="mailto:bigi.kim@gmail.com" class="cta-btn">Contact Us</a>
     <div class="contact-info">
         <div class="contact-item">
             <h4>Email</h4>
@@ -528,7 +556,7 @@
 
 <!-- FOOTER -->
 <footer>
-    <p>&copy; 2026 Knowledge Journey Agency. All rights reserved. | Exclusive Advisory Services</p>
+    <p>&copy; 2026 Knowledge Journey Agency. All rights reserved. | Exclusive VIP Experiences in Korea</p>
 </footer>
 
 </body>

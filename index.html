@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Journey Agency</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #C9A84C;
+            --dark: #0A0F1C;
+            --navy: #111B33;
+            --light: #F5F0E8;
+            --white: #FFFFFF;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark);
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* ===== NAVIGATION ===== */
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            padding: 20px 60px;
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(10,15,28,0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(201,168,76,0.15);
+        }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--gold);
+            letter-spacing: 2px;
+        }
+        .logo span { color: var(--white); font-weight: 300; }
+        .nav-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            margin-left: 40px;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--gold); }
+
+        /* ===== HERO ===== */
+        .hero {
+            height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center;
+            background: linear-gradient(180deg, var(--dark) 0%, var(--navy) 100%);
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at 50% 30%, rgba(201,168,76,0.08) 0%, transparent 70%);
+        }
+        .hero-content { position: relative; z-index: 1; max-width: 900px; padding: 0 40px; }
+        .hero-badge {
+            display: inline-block;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 8px 24px;
+            font-size: 0.7rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            border-radius: 30px;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, var(--white), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.8;
+            font-weight: 300;
+            max-width: 650px;
+            margin: 0 auto 40px;
+        }
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #E0C068);
+            color: var(--dark);
+            padding: 16px 48px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(201,168,76,0.3);
+        }
+
+        /* ===== SECTION COMMON ===== */
+        section { padding: 120px 60px; }
+        .section-label {
+            color: var(--gold);
+            font-size: 0.7rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        .section-desc {
+            color: rgba(255,255,255,0.55);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            max-width: 600px;
+            font-weight: 300;
+        }
+
+        /* ===== ABOUT ===== */
+        .about { background: var(--navy); }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .stat-row { display: flex; gap: 60px; margin-top: 50px; }
+        .stat h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--gold);
+        }
+        .stat p { font-size: 0.8rem; color: rgba(255,255,255,0.5); letter-spacing: 1px; text-transform: uppercase; margin-top: 4px; }
+        .about-visual {
+            display: flex; flex-direction: column; gap: 20px;
+        }
+        .about-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(201,168,76,0.12);
+            border-radius: 12px;
+            padding: 30px;
+        }
+        .about-card h4 { color: var(--gold); margin-bottom: 8px; font-size: 0.95rem; }
+        .about-card p { color: rgba(255,255,255,0.5); font-size: 0.9rem; line-height: 1.6; }
+
+        /* ===== EXPERTS ===== */
+        .experts { background: var(--dark); text-align: center; }
+        .experts-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+        }
+        .expert-card {
+            background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+            border: 1px solid rgba(201,168,76,0.1);
+            border-radius: 16px;
+            padding: 50px 35px 40px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .expert-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(201,168,76,0.4);
+        }
+        .expert-icon {
+            width: 80px; height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(201,168,76,0.15), rgba(201,168,76,0.05));
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 2rem;
+        }
+        .expert-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 6px;
+        }
+        .expert-role {
+            color: var(--gold);
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .expert-card p {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+        .expert-tags { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+        .expert-tags span {
+            border: 1px solid rgba(201,168,76,0.2);
+            color: var(--gold);
+            font-size: 0.7rem;
+            padding: 5px 14px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== SERVICES ===== */
+        .services { background: var(--navy); }
+        .services-header { text-align: center; margin-bottom: 60px; }
+        .services-header .section-desc { margin: 0 auto; }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .service-item {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(201,168,76,0.08);
+            border-radius: 12px;
+            padding: 40px;
+            transition: border-color 0.3s;
+        }
+        .service-item:hover { border-color: rgba(201,168,76,0.3); }
+        .service-num {
+            color: var(--gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+        }
+        .service-item h4 { font-size: 1.15rem; margin-bottom: 12px; }
+        .service-item p { color: rgba(255,255,255,0.5); font-size: 0.88rem; line-height: 1.7; }
+
+        /* ===== PROCESS ===== */
+        .process { background: var(--dark); }
+        .process-header { text-align: center; margin-bottom: 70px; }
+        .process-header .section-desc { margin: 0 auto; }
+        .process-steps {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .process-step {
+            flex: 1;
+            text-align: center;
+            padding: 0 30px;
+            position: relative;
+        }
+        .process-step::after {
+            content: '→';
+            position: absolute;
+            right: -8px;
+            top: 24px;
+            color: var(--gold);
+            font-size: 1.5rem;
+        }
+        .process-step:last-child::after { display: none; }
+        .step-circle {
+            width: 56px; height: 56px;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--gold);
+        }
+        .process-step h4 { font-size: 1rem; margin-bottom: 8px; }
+        .process-step p { color: rgba(255,255,255,0.45); font-size: 0.82rem; line-height: 1.6; }
+
+        /* ===== CONTACT ===== */
+        .contact {
+            background: linear-gradient(180deg, var(--navy), var(--dark));
+            text-align: center;
+            padding: 120px 60px;
+        }
+        .contact .section-title { margin-bottom: 16px; }
+        .contact .section-desc { margin: 0 auto 50px; }
+        .contact-info {
+            display: flex; justify-content: center; gap: 60px; margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        .contact-item h4 { color: var(--gold); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+        .contact-item p { color: rgba(255,255,255,0.6); font-size: 0.95rem; }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: rgba(0,0,0,0.3);
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid rgba(201,168,76,0.08);
+        }
+        footer p { color: rgba(255,255,255,0.3); font-size: 0.8rem; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            nav { padding: 16px 24px; }
+            .nav-links { display: none; }
+            section { padding: 80px 24px; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1rem; }
+            .about-grid { grid-template-columns: 1fr; gap: 40px; }
+            .experts-grid { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: 1fr; }
+            .process-steps { flex-direction: column; gap: 40px; }
+            .process-step::after { display: none; }
+            .stat-row { gap: 30px; }
+            .contact-info { flex-direction: column; gap: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="logo">KJA <span>| Knowledge Journey Agency</span></div>
+    <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experts">Experts</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-badge">Exclusive Advisory for Global Leaders</div>
+        <h1>Your Gateway to<br>Korea's Business Frontier</h1>
+        <p>We are a boutique research & advisory agency serving high-level international executives with deep-domain intelligence on the Korean market — powered by three senior experts in Business Strategy, Data Analytics, and Semiconductor & Electronics.</p>
+        <a href="#contact" class="cta-btn">Schedule a Consultation</a>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+    <div class="about-grid">
+        <div>
+            <div class="section-label">About KJA</div>
+            <div class="section-title">Precision Intelligence<br>for the Korean Market</div>
+            <p class="section-desc">
+                Knowledge Journey Agency is an exclusive advisory firm designed for overseas C-suite executives, institutional investors, and VIP decision-makers who require actionable insights into Korea's fast-evolving business landscape. We combine on-the-ground expertise with rigorous analysis to provide bespoke research and strategic recommendations.
+            </p>
+            <div class="stat-row">
+                <div class="stat">
+                    <h3>3</h3>
+                    <p>Domain Experts</p>
+                </div>
+                <div class="stat">
+                    <h3>VIP</h3>
+                    <p>Exclusive Clientele</p>
+                </div>
+                <div class="stat">
+                    <h3>360°</h3>
+                    <p>Full-Spectrum Analysis</p>
+                </div>
+            </div>
+        </div>
+        <div class="about-visual">
+            <div class="about-card">
+                <h4>🇰🇷 Korea-Focused</h4>
+                <p>In-depth local intelligence across industries — from regulatory shifts to emerging market opportunities unique to the Korean ecosystem.</p>
+            </div>
+            <div class="about-card">
+                <h4>🌐 Global Perspective</h4>
+                <p>Insights tailored for international stakeholders, bridging cultural and strategic gaps between global HQs and Korean operations.</p>
+            </div>
+            <div class="about-card">
+                <h4>🔒 Confidential & Bespoke</h4>
+                <p>Every engagement is private, customized, and delivered with executive-grade discretion.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- EXPERTS -->
+<section class="experts" id="experts">
+    <div class="section-label">Our Team</div>
+    <div class="section-title">Three Pillars of Expertise</div>
+    <p class="section-desc" style="margin: 0 auto;">Each member brings 15+ years of specialized domain knowledge, ensuring comprehensive and authoritative intelligence.</p>
+
+    <div class="experts-grid">
+        <!-- Expert 1: Domain Business -->
+        <div class="expert-card">
+            <div class="expert-icon">📊</div>
+            <h3>Domain Business</h3>
+            <span class="expert-role">Business Strategy & Market Entry</span>
+            <p>Specialist in Korean corporate ecosystems, conglomerate (Chaebol) dynamics, regulatory frameworks, and cross-border business development. Advises on market entry, partnerships, and competitive positioning.</p>
+            <div class="expert-tags">
+                <span>Market Entry</span>
+                <span>Chaebol Strategy</span>
+                <span>Regulatory</span>
+                <span>M&A Advisory</span>
+            </div>
+        </div>
+
+        <!-- Expert 2: Data Analytics -->
+        <div class="expert-card">
+            <div class="expert-icon">🧠</div>
+            <h3>Data Analytics</h3>
+            <span class="expert-role">Quantitative Intelligence & AI</span>
+            <p>Expert in advanced data modeling, market forecasting, consumer behavior analytics, and AI-driven insights. Transforms complex Korean market data into clear, decision-ready intelligence for global executives.</p>
+            <div class="expert-tags">
+                <span>Predictive Analytics</span>
+                <span>AI / ML</span>
+                <span>Market Forecasting</span>
+                <span>Data Visualization</span>
+            </div>
+        </div>
+
+        <!-- Expert 3: Semiconductor & Electronics -->
+        <div class="expert-card">
+            <div class="expert-icon">⚡</div>
+            <h3>Semiconductor & Electronics</h3>
+            <span class="expert-role">Deep-Tech Industry Specialist</span>
+            <p>Authoritative knowledge of Korea's semiconductor ecosystem (Samsung, SK Hynix), consumer electronics supply chains, display technology, and the evolving global chip landscape from a Korean perspective.</p>
+            <div class="expert-tags">
+                <span>Semiconductors</span>
+                <span>Consumer Electronics</span>
+                <span>Supply Chain</span>
+                <span>Display Tech</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+    <div class="services-header">
+        <div class="section-label">What We Offer</div>
+        <div class="section-title">Specialized Services</div>
+        <p class="section-desc">Tailored exclusively for international VIP clients seeking strategic advantage in Korea.</p>
+    </div>
+    <div class="services-grid">
+        <div class="service-item">
+            <div class="service-num">01</div>
+            <h4>Korea Business Research</h4>
+            <p>Comprehensive market research reports covering industry landscapes, competitive intelligence, consumer trends, and regulatory analysis — customized to your specific sector of interest.</p>
+        </div>
+        <div class="service-item">
+            <div class="service-num">02</div>
+            <h4>New Business Opportunity Scouting</h4>
+            <p>Identification and evaluation of emerging business opportunities, startup ecosystems, partnership targets, and untapped market segments within Korea's dynamic economy.</p>
+        </div>
+        <div class="service-item">
+            <div class="service-num">03</div>
+            <h4>Executive Briefings & Advisory</h4>
+            <p>On-demand briefings for C-suite and board-level stakeholders — delivered as concise intelligence memos, virtual sessions, or in-person presentations in Seoul or your location.</p>
+        </div>
+        <div class="service-item">
+            <div class="service-num">04</div>
+            <h4>Due Diligence & Deep Dives</h4>
+            <p>Thorough investigative research on specific Korean companies, technologies, or market segments — supporting investment decisions, M&A activity, or strategic partnerships.</p>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+    <div class="process-header">
+        <div class="section-label">How We Work</div>
+        <div class="section-title">Engagement Process</div>
+        <p class="section-desc">A streamlined, confidential process designed for busy global executives.</p>
+    </div>
+    <div class="process-steps">
+        <div class="process-step">
+            <div class="step-circle">1</div>
+            <h4>Confidential Briefing</h4>
+            <p>Initial consultation to understand your objectives, scope, and timeline.</p>
+        </div>
+        <div class="process-step">
+            <div class="step-circle">2</div>
+            <h4>Research & Analysis</h4>
+            <p>Our 3-expert team conducts deep-domain research tailored to your needs.</p>
+        </div>
+        <div class="process-step">
+            <div class="step-circle">3</div>
+            <h4>Intelligence Delivery</h4>
+            <p>Executive-ready reports, data dashboards, or live briefing sessions.</p>
+        </div>
+        <div class="process-step">
+            <div class="step-circle">4</div>
+            <h4>Ongoing Advisory</h4>
+            <p>Continued support with market monitoring and strategic updates.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <div class="section-label">Get In Touch</div>
+    <div class="section-title">Begin Your Journey</div>
+    <p class="section-desc">All inquiries are handled with strict confidentiality. We respond within 24 hours.</p>
+    <a href="mailto:contact@knowledgejourney.agency" class="cta-btn">Contact Us</a>
+    <div class="contact-info">
+        <div class="contact-item">
+            <h4>Email</h4>
+            <p>contact@knowledgejourney.agency</p>
+        </div>
+        <div class="contact-item">
+            <h4>Location</h4>
+            <p>Seoul, South Korea</p>
+        </div>
+        <div class="contact-item">
+            <h4>Availability</h4>
+            <p>Global Time Zones Accommodated</p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>&copy; 2026 Knowledge Journey Agency. All rights reserved. | Exclusive Advisory Services</p>
+</footer>
+
+</body>
+</html>
